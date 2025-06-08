@@ -1462,15 +1462,25 @@ h1, h2, h3, h4, h5, h6 {
 .warning__headline {
     color: #fff !important;
 }
-@media (max-width: 900px) {
-    .menu__list, .js .menu__list, .menu__list--active {
-        display: flex !important;
-        position: static !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        flex-direction: row;
-        overflow-x: auto;
-        width: 100vw;
-        list-style: none !important;
-    }
+@media (max-width: 1200px) {
+  .menu__list, .js .menu__list, .menu__list--active {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    border: none !important;
+    background-color: #e22d30 !important;
+    width: 100vw !important;
+    list-style: none !important;
+    z-index: 2000 !important;
+  }
+}
+.menu__btn {
+  display: none !important;
+}
+.menu__list, .menu__item, .menu__link, .menu__text {
+  list-style: none !important;
 }
