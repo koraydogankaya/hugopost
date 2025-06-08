@@ -591,10 +591,13 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 /* Mobil ve dar ekranlar (767px ve altı) */
 @media screen and (max-width: 767px) {
   .menu {
-    border-bottom: 3px solid #e22d30;
+    border-bottom: 5px solid #e22d30;
   }
   .menu__btn {
     display: none !important;
+  }
+   html {
+    scroll-padding-top: 119px; /* sticky-header’ın mobildeki yeni yüksekliği */
   }
 }
 
@@ -835,7 +838,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .toc__menu li li li a {
-	padding-left: 45px;
+	padding-left: 44px;
 }
 
 .toc__menu li li li li a {
@@ -1232,7 +1235,7 @@ textarea {
 
 	.wrapper,
 	.logo {
-		padding: 20px;
+		padding: 25px;
 	}
 
 	.widget {
@@ -1266,7 +1269,8 @@ textarea {
 	}
 
 	.logo {
-		text-align: center;
+		text-align: LEFT;
+		padding: 25;
 	}
 
 	.logo__link {
@@ -1274,8 +1278,8 @@ textarea {
 	}
 
 	.logo__title {
-		font-size: 24px;
-		font-size: 1.5rem;
+		font-size: 32px;
+		font-size: 2rem;
 	}
 
 	.sidebar {
@@ -1459,6 +1463,8 @@ ul.menu__list[style*="transform: scaleY(0)"],
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
+  min-height: 44px !important;   /* bar yüksekliği */
+  height: 44px !important;
 }
 
 .menu__item {
@@ -1467,6 +1473,8 @@ ul.menu__list[style*="transform: scaleY(0)"],
   white-space: nowrap !important;
   list-style: none !important;
   border-left: 1px solid rgba(255, 255, 255, .08) !important;
+  min-height: 44px !important;   /* bar yüksekliği */
+  height: 44px !important;
 }
 
 .menu__link,
@@ -1477,12 +1485,13 @@ ul.menu__list[style*="transform: scaleY(0)"],
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: 42px !important;
-  line-height: 42px !important;
+  line-height: 44px !important;
   padding: 0 12px !important;
   color: #fff !important;
   font-size: 14px !important;
   font-weight: 500;
+  min-height: 44px !important;   /* bar yüksekliği */
+  height: 44px !important;
 }
 
 .menu__btn {
