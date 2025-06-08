@@ -525,24 +525,6 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	color: #0066cc;
 }
 
-.menu__list {
-  list-style: none;
-  display: flex !important; /* Menü daima ekranda yatay */
-  flex-direction: row;
-  background-color: #e22d30 !important;  /* Kırmızı */
-  color: #fff !important;
-  width: 100vw;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-  border-radius: 0 !important;
-  border-bottom: 2px solid #b71c1c;
-  position: static !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 9999;
-}
 .menu__item:hover {
 	background: #0066cc;
 }
@@ -593,32 +575,33 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	transition: visibility .15s ease, transform .15s ease, -webkit-transform .15s ease;
 }
 
+
+/* --------- TEMİZ RESPONSIVE MENÜ BLOKLARI --------- */
+
+/* Masaüstü ve geniş ekranlar (767px ve üzeri) */
 @media screen and (min-width: 767px) {
-	.menu {
-		border-bottom: 5px solid #0066cc;
-	}
-
-	.menu__btn {
-		display: none;
-	}
-
-	.menu__list,
-	.js .menu__list {
-		position: relative;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-flex-wrap: wrap;
-		flex-wrap: wrap;
-		visibility: visible;
-		border: 0;
-		-webkit-transform: none;
-		transform: none;
-	}
-
-	.menu__item {
-		border-left: 1px solid rgba(255, 255, 255, .1);
-	}
+  .menu {
+    border-bottom: 5px solid #e22d30;
+  }
+  .menu__btn {
+    display: none;
+  }
 }
+
+/* Mobil ve dar ekranlar (767px ve altı) */
+@media screen and (max-width: 767px) {
+  .menu {
+    border-bottom: 3px solid #e22d30;
+  }
+  .menu__btn {
+    display: none !important;
+  }
+}
+
+/* Çok küçük ekranlar (512px ve altı) */
+@media screen and (max-width: 512px) {
+}
+
 
 /* Posts/Pages */
 .post__header,
@@ -1370,10 +1353,6 @@ textarea {
 }
 
 
-/* === FIXES: NAVIGATION === */
-.menu__list {
-    background-color: #121212 !important;
-}
 
 .menu__link {
     color: #f0f0f0 !important;
@@ -1407,10 +1386,6 @@ textarea {
 
 /* === FINAL DARK BAR AND TEXT UPDATES === */
 
-/* Make menu bar red */
-.menu__list {
-    background-color: #e22d30 !important;
-}
 
 /* Make whole page background black and text white */
 body,
@@ -1462,25 +1437,76 @@ h1, h2, h3, h4, h5, h6 {
 .warning__headline {
     color: #fff !important;
 }
-@media (max-width: 1200px) {
-  .menu__list, .js .menu__list, .menu__list--active {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    position: static !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    border: none !important;
-    background-color: #e22d30 !important;
-    width: 100vw !important;
-    list-style: none !important;
-    z-index: 2000 !important;
-  }
+ul.menu__list[style*="display: none"],
+ul.menu__list[style*="visibility: hidden"],
+ul.menu__list[style*="scaleY(0)"],
+ul.menu__list[style*="transform: scaleY(0)"],
+.js .menu__list,
+.menu__list {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  width: 100vw !important;
+  min-width: min-content !important;
+  background: #e22d30 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
+
+.menu__item {
+  flex: 0 0 auto !important;
+  min-width: 90px !important;
+  white-space: nowrap !important;
+  list-style: none !important;
+  border-left: 1px solid rgba(255, 255, 255, .08) !important;
+}
+
+.menu__link,
+.menu__text {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 42px !important;
+  line-height: 42px !important;
+  padding: 0 12px !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 500;
+}
+
 .menu__btn {
   display: none !important;
 }
-.menu__list, .menu__item, .menu__link, .menu__text {
-  list-style: none !important;
+@media screen and (max-width: 640px) {
+  .menu__link,
+  .menu__text {
+    font-size: 11px !important;
+    padding: 0 6px !important;
+  }
+  .menu__item {
+    min-width: 70px !important;
+  }
 }
+
+@media screen and (max-width: 480px) {
+  .menu__link,
+  .menu__text {
+    font-size: 8px !important;
+    padding: 0 6px !important;
+  }
+  .menu__item {
+    min-width: 70px !important;
+  }
+}
+
