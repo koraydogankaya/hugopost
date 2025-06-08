@@ -526,6 +526,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .menu__list {
+  list-style: none;
   display: flex !important; /* Menü daima ekranda yatay */
   flex-direction: row;
   background-color: #e22d30 !important;  /* Kırmızı */
@@ -1460,4 +1461,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .warning__headline {
     color: #fff !important;
+}
+@media (max-width: 900px) {
+    .menu__list, .js .menu__list, .menu__list--active {
+        display: flex !important;
+        position: static !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100vw;
+        list-style: none !important;
+    }
 }
