@@ -1519,3 +1519,16 @@ ul.menu__list[style*="transform: scaleY(0)"],
   }
 }
 
+@media screen and (max-width: 440px) {
+  .menu__link,
+  .menu__text {
+    font-size: 8px !important;
+    padding: 0 6px !important;
+  }
+  .menu__item {
+    min-width: 70px !important;
+  }
+   html {
+    scroll-padding-top: 119px; /* sticky-header’ın mobildeki yeni yüksekliği */
+  }
+}
