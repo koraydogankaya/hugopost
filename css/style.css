@@ -1529,6 +1529,6 @@ ul.menu__list[style*="transform: scaleY(0)"],
     min-width: 70px !important;
   }
    html {
-    scroll-padding-top: 119px; /* sticky-header’ın mobildeki yeni yüksekliği */
+    scroll-padding-top: 125px; /* sticky-header’ın mobildeki yeni yüksekliği */
   }
 }
