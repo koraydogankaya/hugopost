@@ -526,18 +526,22 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .menu__list {
-    display: flex !important;
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
-    background-color: #e22d30 !important;  /* Kırmızı */
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-    border-radius: 0 !important;
-    border-bottom: 2px solid #b71c1c;
+  display: flex !important; /* Menü daima ekranda yatay */
+  flex-direction: row;
+  background-color: #e22d30 !important;  /* Kırmızı */
+  color: #fff !important;
+  width: 100vw;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  border-radius: 0 !important;
+  border-bottom: 2px solid #b71c1c;
+  position: static !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999;
 }
-
 .menu__item:hover {
 	background: #0066cc;
 }
@@ -551,12 +555,14 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .menu__link {
-	display: block;
-	padding: 10px 15px;
-	padding: .625rem .9375rem;
-	font-weight: 700;
-	color: #fff;
-	text-transform: uppercase;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 500;
+  display: inline-block !important;
+  background: none !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 10px 14px !important;
 }
 
 .menu__link:hover {
